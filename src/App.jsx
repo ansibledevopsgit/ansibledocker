@@ -8,11 +8,18 @@ import { useEffect, useState } from 'react';
 const  App=() => {
 
   const [title,SetTitle]= useState('');
+  const [user,SetUser]= useState('');
   const [users,SetUsers]= useState([]);
 
   const apiUrl= process.env.REACT_APP_BASE_URL;
 
-   const GetUser=()=>{
+  const GetAll=()=>{
+    axios.get(apiUrl+"/User/All").then( result =>{
+      SetUser(result.data.all);
+    })
+ }
+
+   const GetUserSql=()=>{
       axios.get(apiUrl+"/User/GetUserSql").then( result =>{
         SetUsers(result.data.users);
       })
@@ -20,16 +27,17 @@ const  App=() => {
 
   useEffect(()=>{
     SetTitle(" hi ansible devops docker  :) ");
-    GetUser();
+    GetAll();
+    GetUserSql();
 
-  }, []);
+  }, [user]);
 
 
 
   return (
     <div className="yaser">
        {
-         title
+         title + " " + user
        }
         <div className='fullname'>
             {
