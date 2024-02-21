@@ -26,7 +26,7 @@ const  App=() => {
    }
 
   useEffect(()=>{
-    SetTitle(" hi ansible devops docker  :) ");
+    SetTitle("  hello :");
     GetAll();
     GetUserSql();
 
