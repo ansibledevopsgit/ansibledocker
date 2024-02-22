@@ -26,7 +26,7 @@ const  App=() => {
    }
 
   useEffect(()=>{
-    SetTitle("    ok :");
+    SetTitle("    ok good luck  :");
     GetAll();
     GetUserSql();
 
