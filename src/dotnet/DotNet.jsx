@@ -1,17 +1,17 @@
  
-import './App.css';
+import './DotNet.css';
 import { useEffect, useState } from 'react';
  import axios  from 'axios';   
 
  
 
-const  App=() => {
+const  DotNet=() => {
 
   const [title,SetTitle]= useState('');
   const [user,SetUser]= useState('');
   const [users,SetUsers]= useState([]);
 
-  const apiUrl= process.env.REACT_APP_BASE_URL;
+  const apiUrl= "http://192.168.1.103:80/api";
 
   const GetAll=()=>{
     axios.get(apiUrl+"/User/All").then( result =>{
@@ -26,7 +26,7 @@ const  App=() => {
    }
 
   useEffect(()=>{
-    SetTitle("    welCome :");
+    SetTitle("    WelCome  DotNet:");
     GetAll();
     GetUserSql();
 
@@ -35,10 +35,10 @@ const  App=() => {
 
 
   return (
-    <div className="yaser">
-       {
-         title + " " + user
-       }
+    <div className="div">
+         {
+           title + " " + user
+         }
         <div className='fullname'>
             {
              users.map( user=>{
@@ -58,4 +58,4 @@ const  App=() => {
 }
 
 
-export default App;
+export default DotNet;
