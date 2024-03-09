@@ -10,7 +10,7 @@ const  Node=() => {
   const [comment,SetComment]= useState('');
   const [comments,SetComments]= useState([]);
 
-  const apiUrl=  "http://localhost:8000";
+  const apiUrl=  "http://109.122.224.141:8000";
 
   const GetAll=()=>{
     axios.get(apiUrl+"/GetAll").then( result =>{
