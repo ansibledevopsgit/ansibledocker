@@ -25,21 +25,36 @@ const  Log=() => {
       })
    }
 
+
    const Welcome=()=>{
     axios.get( apiUrl ).then( result =>{
       SetTitle("    WelCome  Node PostgreSQL :" + result.data);
     })
  }
 
+ 
+const OnClickInsert=()=>{
+  
+ axios.get(apiUrl+"/Insert").then( result =>{
+     SetTitle("    WelCome  Node PostgreSQL Insert"  );
+  })
+}
+const OnClickGetAll=()=>{
+ axios.get(apiUrl+"/GetAll").then( result =>{
+   SetComments(result.data.comments);
+   SetTitle("    WelCome  Node PostgreSQL GetAll  "  );
+ })
+}
+
  const OnClick=()=>{
    axios.get(apiUrl+"/Create").then( result =>{
-     console.log(result);
+     SetTitle("    WelCome  Node  PostgreSQL :  " + result.data );
   })
  }
 
   useEffect(()=>{
     Welcome();
-    GetAll();
+    
   }, [logs]);
 
 
@@ -50,6 +65,8 @@ const  Log=() => {
          title 
        }
        <button onClick={OnClick} className='css-button'> crate Table </button>
+       <button onClick={OnClickInsert} className='css-button'> Insert   </button>
+       <button onClick={OnClickGetAll} className='css-button'>   Get All </button>
         <div className='data'>
            {
              

@@ -33,13 +33,25 @@ const  Node=() => {
 
  const OnClick=()=>{
    axios.get(apiUrl+"/Create").then( result =>{
-     console.log(result);
+    SetTitle("    WelCome  Node  :  " + result.data );
+  })
+ }
+ const OnClickInsert=()=>{
+  let num   =Math.floor(Math.random() * (9999 - 1 + 1)) + 1;
+  axios.post(apiUrl+"/Insert",{ UserID: num }).then( result =>{
+      SetTitle("    WelCome  Node Insert"  );
+   })
+ }
+ const OnClickGetAll=()=>{
+  axios.get(apiUrl+"/GetAll").then( result =>{
+    SetComments(result.data.comments);
+    SetTitle("    WelCome  Node GetAll  "  );
   })
  }
 
   useEffect(()=>{
     Welcome();
-    GetAll();
+   
   }, [comments]);
 
 
@@ -50,6 +62,8 @@ const  Node=() => {
          title 
        }
        <button onClick={OnClick} className='css-button'> crate Table </button>
+       <button onClick={OnClickInsert} className='css-button'> Insert   </button>
+       <button onClick={OnClickGetAll} className='css-button'>   Get All </button>
         <div className='data'>
            {
              
