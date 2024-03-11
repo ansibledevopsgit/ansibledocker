@@ -10,7 +10,7 @@ const  Log=() => {
   const [log,SetLog]= useState('');
   const [logs,SetLogs]= useState([]);
 
-  const apiUrl=  "http://109.122.224.141:9000";
+  const apiUrl=  "http://localhost:8000";
 
   const GetAll=()=>{
     axios.get(apiUrl+"/GetAll").then( result =>{
