@@ -12,19 +12,6 @@ const  Log=() => {
 
   const apiUrl=  "http://localhost:8000";
 
-  const GetAll=()=>{
-    axios.get(apiUrl+"/GetAll").then( result =>{
-      SetLogs(result.data);
-    })
- }
-
-  const GetByID=()=>{
-      axios.get(apiUrl+"/GetByID").then( result =>{
-        SetLog(result.data.comments);
-      
-      })
-   }
-
 
    const Welcome=()=>{
     axios.get( apiUrl ).then( result =>{
@@ -41,7 +28,7 @@ const OnClickInsert=()=>{
 }
 const OnClickGetAll=()=>{
  axios.get(apiUrl+"/GetAll").then( result =>{
-   SetComments(result.data.comments);
+   SetLogs(result.data);
    SetTitle("    WelCome  Node PostgreSQL GetAll  "  );
  })
 }

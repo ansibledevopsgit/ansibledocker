@@ -12,18 +12,7 @@ const  Node=() => {
 
   const apiUrl=  "http://localhost:5000";
 
-  const GetAll=()=>{
-    axios.get(apiUrl+"/GetAll").then( result =>{
-      SetComments(result.data);
-    })
- }
-
-  const GetByID=()=>{
-      axios.get(apiUrl+"/GetByID").then( result =>{
-        SetComment(result.data.comments);
-      
-      })
-   }
+   
 
    const Welcome=()=>{
     axios.get( apiUrl ).then( result =>{
@@ -44,7 +33,7 @@ const  Node=() => {
  }
  const OnClickGetAll=()=>{
   axios.get(apiUrl+"/GetAll").then( result =>{
-    SetComments(result.data.comments);
+    SetComments(result.data);
     SetTitle("    WelCome  Node GetAll  "  );
   })
  }
