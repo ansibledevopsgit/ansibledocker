@@ -28,13 +28,7 @@ const  Node=() => {
  const OnClickInsert=()=>{
       let num   =Math.floor(Math.random() * (9999 - 1 + 1)) + 1;
      
-      axios.get(apiUrl+"/Insert2").then( result =>{
-         SetTitle("    WelCome  Node Insert 2"  );
-      })
-      axios.post(apiUrl+"/Insert3",{ UserID: num+1 }).then( result =>{
-        SetTitle("    WelCome  Node Insert 3"  );
-      })
-      axios.post(apiUrl+"/Insert",{ UserID: num }).then( result =>{
+      axios.post(apiUrl+"/Insert",{ userID: num }).then( result =>{
         SetTitle("    WelCome  Node Insert"  );
       })
  }

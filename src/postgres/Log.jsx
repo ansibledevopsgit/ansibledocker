@@ -22,7 +22,9 @@ const  Log=() => {
  
 const OnClickInsert=()=>{
   
- axios.get(apiUrl+"/Insert").then( result =>{
+  let num   =Math.floor(Math.random() * (9999 - 1 + 1)) + 1;
+     
+ axios.post(apiUrl+"/Insert",{ userID: num }).then( result =>{
      SetTitle("    WelCome  Node PostgreSQL Insert"  );
   })
 }
