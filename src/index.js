@@ -11,7 +11,7 @@ root.render(
   <React.StrictMode>
      {/* <DotNet/> */}
      <Node />
-      <Log /> 
+      {/* <Log />  */}
   </React.StrictMode>
 );
 
