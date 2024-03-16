@@ -11,7 +11,7 @@ const  DotNet=() => {
   const [user,SetUser]= useState('');
   const [users,SetUsers]= useState([]);
 
-  const apiUrl= "http://192.168.1.103:80/api";
+  const apiUrl= "http://localhost:4000/api";
 
   const GetAll=()=>{
     axios.get(apiUrl+"/User/All").then( result =>{
